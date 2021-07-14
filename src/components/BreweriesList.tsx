@@ -7,7 +7,7 @@ type BreweriesProp = {
  
 }
 export default function BreweriesList({ breweries }:BreweriesProp) {
-  const [openForm, setOpenForm] = useState(false);
+  const [openForm, setOpenForm] = useState<null | number>(null);
 
   return (
     <article>
