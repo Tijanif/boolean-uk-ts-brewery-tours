@@ -12,6 +12,24 @@ const initialForm = {
   time: "",
 };
 
+type BreweryProps = {
+  brewery: {
+    name: string | null
+    brewery_type:string | null
+    phone: string | null
+    website_url: string | null
+    street: string | null
+    city: string | null
+    postal_code: string | null
+    id: number | null
+  }
+  isFormOpen: boolean
+  setOpenForm: (arg: string) =>  string | null
+}
+// type FormProps = {
+//   isFormOpen: boolean
+//   setOpenForm:
+// }
 export default function BreweriesListItem({
   brewery: {
     name,
@@ -25,7 +43,7 @@ export default function BreweriesListItem({
   },
   isFormOpen,
   setOpenForm,
-}) {
+}:BreweryProps, ) {
   const [form, setForm] = useState(initialForm);
   const updateForm = e => {
     const { name, value } = e.target;

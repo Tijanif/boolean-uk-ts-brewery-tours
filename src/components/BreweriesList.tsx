@@ -2,7 +2,11 @@ import React from "react";
 import { useState } from "react";
 import BreweriesListItem from "./BreweriesListItem";
 
-export default function BreweriesList({ breweries }) {
+type BreweriesProp = {
+ breweries:[]
+ 
+}
+export default function BreweriesList({ breweries }:BreweriesProp) {
   const [openForm, setOpenForm] = useState(false);
 
   return (
