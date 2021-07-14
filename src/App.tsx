@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
-import Filter from './components/Filter';
-import Header from "./components/Header";
+import Header from './components/Header'
+import BreweriesSearch from "./components/BreweriesSearch";
+
 
 
 
 function App() {
- 
+  const [searchInput, setSearchInput] = useState("");
+  const [showBookings, setShowBookings] = useState(false);
 
   return (
     <>
-      <Header />
+      <Header submitForm={setSearchInput} setShowBookings={setShowBookings}/>
       <main>
-        {/* Ṛest of components will go here
-         */
-         <Filter/>
-         }
+     
+        {searchInput && <BreweriesSearch searchInput={searchInput} />}
+         
       </main>
     </>
   );

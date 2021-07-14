@@ -43,7 +43,7 @@ body {
   border-radius: 0.25rem;
 }
 
-main {
+.main-search {
   display: grid;
   grid-template-areas:
     "sidebar title"
@@ -159,15 +159,17 @@ article {
 .breweries-list li {
   list-style-type: none;
 
+  min-width: 500px;
   padding: 1rem 2rem;
 
   display: grid;
   grid-template-areas:
     "heading heading type"
     "address phone ."
-    ". . link";
+    ". booking link"
+    "form form form";
   grid-template-columns: repeat(2, 1fr) minmax(140px, auto);
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(4, auto);
 
   border-radius: 0.25rem;
   border: 1px solid #000;
@@ -221,6 +223,30 @@ article {
   grid-area: link;
 }
 
+.breweries-list .booking {
+  grid-area: booking;
+}
+
+.breweries-list .booking-form {
+  grid-area: form;
+  max-width: 700px;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #000;
+  margin-top: 1rem;
+}
+
+.breweries-list .booking button {
+  display: block;
+  margin: 0 1rem 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 .breweries-list li .link a {
   display: block;
   padding: 0.5rem 1rem;
@@ -233,4 +259,32 @@ article {
   text-align: center;
   text-decoration: none;
   font-weight: bold;
+}
+
+.booking-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 4rem);
+  grid-gap: 0.5rem;
+  align-items: center;
+}
+
+.booking-form input {
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.booking-form input[type="submit"] {
+  grid-column: 2/3;
+  place-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #1565c0;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
 }
