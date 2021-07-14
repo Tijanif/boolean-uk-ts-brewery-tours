@@ -2,6 +2,7 @@ import { useState } from "react";
 import BookingForm from "./BookingForm";
 
 import { postNewBooking } from "../breweryDbClient";
+import React from "react";
 
 const initialForm = {
   firstName: "",
