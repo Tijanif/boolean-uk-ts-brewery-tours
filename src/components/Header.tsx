@@ -1,7 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Header({ submitForm, setShowBookings }) {
+type headerProps = {
+  submitForm: (arg: '') => void;
+  setShowBookings: (arg: boolean) => void
+}
+
+export default function Header({ submitForm, setShowBookings }:headerProps) {
   const [input, setInput] = useState("");
 
   return (

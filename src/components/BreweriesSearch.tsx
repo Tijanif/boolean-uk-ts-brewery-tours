@@ -2,16 +2,29 @@ import { useState } from "react";
 
 import ListContainer from "./ListContainer";
 import FilterContainer from "./FilterContainer";
+import React from "react";
 
-export default function BreweriesSearch({ searchInput }) {
+
+
+type searchInputProps = {
+  searchInput: string
+}
+
+type EventTarget = {
+  name: string
+  value: string
+  checked: string
+   type: boolean
+}
+export default function BreweriesSearch({ searchInput }:searchInputProps ) {
   const [cities, setCities] = useState([]);
   const [filters, setFilters] = useState({
     selectedCities: [],
     selectedType: "",
   });
 
-  const updateFilters = e => {
-    let { name, value, checked, type } = e.target;
+  const updateFilters = (e: Event) => {
+      let { name, value, checked, type } = e.target;
 
     if (type === "checkbox")
       value = checked
