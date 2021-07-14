@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 type headerProps = {
-  submitForm: (arg: '') => void;
+  submitForm: (arg: string) => void;
   setShowBookings: (arg: boolean) => void
 }
 
