@@ -30,9 +30,9 @@ export default function Header({ submitForm, setShowBookings }:headerProps) {
             type="text"
           />
         </form>
-        {/* <button onClick={() => setShowBookings(curr => !curr)}>
+        <button onClick={() => setShowBookings(curr => !curr)}>
           Show bookings
-        </button> */}
+        </button>
       </section>
     </header>
   );
